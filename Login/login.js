@@ -26,7 +26,7 @@ function saveData() {
     (v) => v.email === emailAddress && v.pass === password
   );
   if (found) {
-    window.location.href = "../pfsm.html";
+    window.location.href = "pfsm.html";
   } else {
     document.getElementById(`passwordError`).innerHTML = "";
     document.getElementById(`passwordError`).innerHTML = "Incorrect password";
