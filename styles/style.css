@@ -399,7 +399,7 @@ main .container .left .profile {
   color: black;
   font-size: 1rem;
 }
-.add-comment input:hover{
+.add-comment input:hover {
   background: white;
 }
 
@@ -557,6 +557,9 @@ main .container .right {
   }
   main .container .middle .stories {
     margin-right: 0.5rem;
+  }
+  .add-comment input {
+    width: 95vw;
   }
   .post {
     margin-right: 0.5rem;
