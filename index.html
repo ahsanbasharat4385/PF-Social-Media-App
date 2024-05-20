@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Datepicker CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+    />
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Bootstrap Datepicker JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+    <!-- main css -->
+    <link rel="stylesheet" href="./main.css" />
+    <!-- Date Picker -->
+
+    <title>PF Task</title>
+  </head>
+  <body>
+    <!-- HEADING-->
+    <div
+      class="container d-flex flex-column flex-lg-row justify-content-evenly pt-5 mt-5"
+    >
+      <div class="text-center text-lg-start mt-lg-5 pt-lg-5">
+        <h1 class="text-primary fw-bold fs-0">Programmer Force</h1>
+        <p class="w-75 mx-auto mx-lg-0 fs-4">
+          Programmer Force help you connect and share with people in life.
+        </p>
+      </div>
+      <!-- LOGIN FORM -->
+
+      <div style="max-width: 28rem; width: 100%">
+        <div class="bg-white shadow rounded p-3 input-group-lg">
+          <p class="text-center">
+            <span class="text-danger fw-bold" id="allErrors"></span>
+          </p>
+          <input
+            type="email"
+            class="form-control my-3"
+            id="email"
+            placeholder="Email Address"
+          />
+          <span id="emailError" class="text-danger"></span>
+          <input
+            type="password"
+            class="form-control my-3"
+            placeholder="Password"
+            id="pass"
+          />
+          <span id="passwordError" class="text-danger"></span>
+          <!-- <a href="#"
+            ><button class="btn btn-primary w-100 my-3">log In</button></a
+          > -->
+          <button
+            type="submit"
+            class="btn btn-primary w-100 p-0 my-2"
+            id="save_btn"
+            onclick="saveData()"
+          >
+            Log In
+          </button>
+          <!-- <a href="#" class="text-decoration-none text-center">
+            <p>Forget Password</p>
+          </a> -->
+          <!-- CREATE FORM -->
+          <hr />
+          <div class="text-center my-4">
+            <a href="./SignUp/signUp.html" class="btn btn-success btn-lg"
+              >Create New Account</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer section -->
+    <footer class="bg-white p-4 text-muted mt-4">
+      <div class="container">
+        <div class="d-flex flex-wrap">
+          <p class="mx-2 fs-7 mb-8">English(US)</p>
+          <p class="mx-2 fs-7 mb-8">Hindi (HND)</p>
+          <p class="mx-2 fs-7 mb-8">Japanese (JPN)</p>
+          <p class="mx-2 fs-7 mb-8">Urdu(Ur)</p>
+          <p class="mx-2 fs-7 mb-8">English(UK)</p>
+        </div>
+        <hr />
+        <div class="d-flex flex-wrap">
+          <p class="mx-2 fs-7 mb-8">Log In</p>
+          <p class="mx-2 fs-7 mb-8">Sign Up</p>
+          <p class="mx-2 fs-7 mb-8">Contact Us</p>
+          <p class="mx-2 fs-7 mb-8">Report Isuue</p>
+        </div>
+        <hr />
+        <div class="text-center fs-7 mt-5">
+          <p>Copyright © 2024 Programmer Force | Reserved by PF</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- bootstrap Bundles.js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- main js -->
+    <script src="./Login/login.js"></script>
+  </body>
+</html>

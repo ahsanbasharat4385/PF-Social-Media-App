@@ -1,0 +1,62 @@
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("https://dummyjson.com/users")
+    .then((res) => res.json())
+    .then((data) => {
+      const users = data.users || [];
+      fetch("https://dummyjson.com/posts")
+        .then((res) => res.json())
+        .then((data) => {
+          const posts = data.posts || [];
+
+          fetch("https://dummyjson.com/comments")
+            .then((res) => res.json())
+            .then((data) => {
+              const comments = data.comments || [];
+              displayPosts(posts, users, comments);
+            });
+        });
+    })
+    .catch((err) => console.error("Error fetching data:", err));
+  function displayPosts(posts, users, comments) {
+    const feedContainer = document.getElementById("feed-container");
+    if (!feedContainer) {
+      console.error("Feed container element not found.");
+      return;
+    }
+    posts.forEach((post) => {
+      const user = users.find((user) => user.id === post.id);
+      const postComments = comments.filter(comment => comment.id === post.id);
+
+      const postDiv = document.createElement("div");
+      postDiv.classList.add("post");
+      postDiv.innerHTML = `
+        <div class="profile-info">
+          <img src="${user.image}" alt="${user.firstName}" class="profile-pic">
+          <div class="profile-details">
+            <span class="profile-name">${user.firstName + " " + user.lastName}</span>
+          </div>
+        </div>
+        <div class="post-content">
+          <p>Tittle: ${post.title}</p>
+          <img src="./assets/pf-logo.png" alt="Post Image">
+          <p>Description: ${post.body}</p>
+        </div>
+        <div class="post-comments">
+          <span><i class="fa-solid fa-comments"></i></span>
+          ${postComments.map(comment => `
+            <div class="comment" data-comment-id="${comment.id}">
+              <p><strong>${comment.user.username}:</strong> ${comment.body}</p>
+              <span><i class="fa-regular fa-pen-to-square edit"></i></span>
+              <span><i class="fa-solid fa-trash delete"></i></span>
+            </div>
+          `).join('')}
+        </div>
+        <div class="add-comment">
+          <input type="text" placeholder="Add a comment..." class="new-comment-input">
+          <button class="add-comment-button"><i class="fa-regular fa-paper-plane"></i></button>
+        </div>
+      `;
+      feedContainer.appendChild(postDiv);
+    });
+  }
+});
