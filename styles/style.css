@@ -387,27 +387,29 @@ main .container .left .profile {
 
 .add-comment input {
   padding: 0.5rem;
-  width: 22vw;
+  width: 25vw;
   margin-left: 1rem;
   font-size: 0.9rem;
   border-radius: 3rem;
-  margin-left: 5px;
-  background: #3b923b;
+  background: #797c79;
   text-align: center;
-  margin-left: 2rem;
   margin-bottom: 0.5rem;
 }
 .add-comment input::placeholder {
   color: black;
+  font-size: 1rem;
+}
+.add-comment input:hover{
+  background: white;
 }
 
 .add-comment button {
-  padding: 0.4rem 2rem;
+  padding: 0.4rem 1rem;
   font-weight: 500;
   border-radius: 2rem;
   cursor: pointer;
   transition: all 300ms ease;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
   font-weight: bold;
 
   margin-left: 0.5rem;
