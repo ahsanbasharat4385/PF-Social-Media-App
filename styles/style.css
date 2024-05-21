@@ -410,9 +410,7 @@ main .container .left .profile {
   border-radius: 2rem;
   cursor: pointer;
   transition: all 300ms ease;
-  /* font-size: 1.5rem; */
   font-weight: bold;
-
   margin-left: 0.5rem;
 }
 

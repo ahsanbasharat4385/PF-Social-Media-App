@@ -38,9 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      const postComments = comments.filter(
-        (comment) => comment.id === post.id
-      );
+      const postComments = comments.filter((comment) => comment.id === post.id);
 
       const postDiv = document.createElement("div");
       postDiv.classList.add("post");
@@ -127,32 +125,43 @@ document.addEventListener("DOMContentLoaded", () => {
     const postDiv = target.closest(".post");
     const newCommentInput = postDiv.querySelector(".new-comment-input");
     const newCommentText = newCommentInput.value.trim();
-
+  
     if (newCommentText !== "") {
-      const newComment = {
-        id: Date.now(),
-        body: newCommentText,
-        user: { username: "Ahsan Basharat" },
-      };
-
-      const newCommentDiv = document.createElement("div");
-      newCommentDiv.classList.add("comment");
-      newCommentDiv.innerHTML = `
-        <p><strong>${newComment.user.username}:</strong> ${newComment.body}</p>
-        <span><i class="fa-regular fa-pen-to-square edit"></i></span>
-        <span><i class="fa-solid fa-trash delete"></i></span>
-      `;
-
-      postDiv.querySelector(".post-comments").appendChild(newCommentDiv);
-      newCommentInput.value = "";
-      newCommentDiv
-        .querySelector(".edit")
-        .addEventListener("click", handleEditComment);
-      newCommentDiv
-        .querySelector(".delete")
-        .addEventListener("click", handleDeleteComment);
+      const userRecord = JSON.parse(localStorage.getItem("users")) || [];
+      const signedInEmail = userRecord[0].email; 
+  
+      const signedInUser = userRecord.find((user) => user.email === signedInEmail);
+      if (signedInUser) {
+        const newComment = {
+          id: Date.now(),
+          body: newCommentText,
+          user: {
+            username: `${signedInUser.fname} ${signedInUser.lname}`, 
+          },
+        };
+  
+        const newCommentDiv = document.createElement("div");
+        newCommentDiv.classList.add("comment");
+        newCommentDiv.innerHTML = `
+          <p><strong>${newComment.user.username}:</strong> ${newComment.body}</p>
+          <span><i class="fa-regular fa-pen-to-square edit"></i></span>
+          <span><i class="fa-solid fa-trash delete"></i></span>
+        `;
+  
+        postDiv.querySelector(".post-comments").appendChild(newCommentDiv);
+        newCommentInput.value = "";
+        newCommentDiv
+          .querySelector(".edit")
+          .addEventListener("click", handleEditComment);
+        newCommentDiv
+          .querySelector(".delete")
+          .addEventListener("click", handleDeleteComment);
+      } else {
+        alert("User not found in local storage.");
+      }
     } else {
       alert("Comment cannot be empty.");
     }
   }
+  
 });
