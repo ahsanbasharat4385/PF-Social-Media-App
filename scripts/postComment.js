@@ -50,9 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
         <div class="post-content">
-          <p>Tittle: ${post.title}</p>
+          <p> <b>Tittle:</b> ${post.title}</p>
           <img src="./assets/pf-logo.png" alt="Post Image">
-          <p>Description: ${post.body}</p>
+          <p> <b>Description:</b> ${post.body}</p>
         </div>
         <div class="post-comments">
           <span><i class="fa-solid fa-comments"></i></span>
