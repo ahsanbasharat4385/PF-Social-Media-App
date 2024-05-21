@@ -52,6 +52,16 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="post-content">
           <p> <b>Tittle:</b> ${post.title}</p>
           <img src="./assets/pf-logo.png" alt="Post Image" style="border:none; border-radius:5%;">
+          <div class="action-buttons" style="display:flex;align-items: center; justify-content: space-between; margin-bottom: 1rem; margin-top: 1rem;">
+                                <div class="interaction-buttons" style="margin-left: 2rem; font-size:1.4rem; ">
+                               <span> <i class="fa-solid fa-heart heartplus"></i> </span>
+                               <span> <i class="fa-regular fa-comment"></i> </span>
+                               <span> <i class="fa-solid fa-share"></i></span>
+                                </div>
+                                <div class="bookmark" style="margin-right:2rem; font-size:1.4rem;">
+                                    <span><i class="fa-solid fa-bookmark bookmarkplus"></i></span>
+                                </div>
+                            </div>
           <p> <b>Description:</b> ${post.body}</p>
         </div>
         <div class="post-comments">
@@ -59,10 +69,10 @@ document.addEventListener("DOMContentLoaded", () => {
           ${postComments
             .map(
               (comment) => `
-            <div class="comment" data-comment-id="${comment.id}">
-              <p><strong>${comment.user.username}:</strong> ${comment.body}</p>
-              <span><i class="fa-regular fa-pen-to-square edit"></i></span>
-              <span><i class="fa-solid fa-trash delete"></i></span>
+            <div class="comment" data-comment-id="${comment.id}" style="width:90%">
+              <p style="margin-top:0.3rem;"><strong>${comment.user.username}:</strong> ${comment.body}</p>
+              <span style="font-size:1.3rem;"><i class="fa-regular fa-pen-to-square edit"></i></span>
+              <span style="font-size:1.3rem;"><i class="fa-solid fa-trash delete"></i></span>
             </div>
           `
             )
@@ -112,12 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function handleDeleteComment(event) {
     const target = event.target;
     let commentDiv = target.closest(".comment");
-    if (
-      commentDiv &&
-      confirm("Are you sure you want to delete this comment?")
-    ) {
-      commentDiv.remove();
-    }
+    commentDiv.remove();
   }
 
   function handleAddComment(event) {

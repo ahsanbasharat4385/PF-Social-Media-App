@@ -358,6 +358,15 @@ main .container .left .profile {
   text-align: justify;
 }
 
+.interaction-buttons span{
+  cursor: pointer;
+}
+.heartplus:hover {
+  color: red;
+}
+.bookmarkplus:hover{
+  color: green;
+}
 .post-comments {
   margin-top: 10px;
 }
