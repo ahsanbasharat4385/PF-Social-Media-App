@@ -125,21 +125,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const postDiv = target.closest(".post");
     const newCommentInput = postDiv.querySelector(".new-comment-input");
     const newCommentText = newCommentInput.value.trim();
-  
+
     if (newCommentText !== "") {
       const userRecord = JSON.parse(localStorage.getItem("users")) || [];
-      const signedInEmail = userRecord[0].email; 
-  
-      const signedInUser = userRecord.find((user) => user.email === signedInEmail);
+      const signedInEmail = userRecord[0].email;
+
+      const signedInUser = userRecord.find(
+        (user) => user.email === signedInEmail
+      );
       if (signedInUser) {
         const newComment = {
           id: Date.now(),
           body: newCommentText,
           user: {
-            username: `${signedInUser.fname} ${signedInUser.lname}`, 
+            username: `${signedInUser.fname} ${signedInUser.lname}`,
           },
         };
-  
+
         const newCommentDiv = document.createElement("div");
         newCommentDiv.classList.add("comment");
         newCommentDiv.innerHTML = `
@@ -147,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <span><i class="fa-regular fa-pen-to-square edit"></i></span>
           <span><i class="fa-solid fa-trash delete"></i></span>
         `;
-  
+
         postDiv.querySelector(".post-comments").appendChild(newCommentDiv);
         newCommentInput.value = "";
         newCommentDiv
@@ -163,5 +165,4 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Comment cannot be empty.");
     }
   }
-  
 });
