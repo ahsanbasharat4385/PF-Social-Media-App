@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
         <div class="post-content">
           <p> <b>Tittle:</b> ${post.title}</p>
-          <img src="./assets/pf-logo.png" alt="Post Image">
+          <img src="./assets/pf-logo.png" alt="Post Image" style="border:none; border-radius:5%;">
           <p> <b>Description:</b> ${post.body}</p>
         </div>
         <div class="post-comments">
