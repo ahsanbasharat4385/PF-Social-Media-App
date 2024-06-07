@@ -95,6 +95,52 @@ nav .create {
   gap: 2rem;
 }
 
+.card-menu-wrap{
+  position: absolute;
+  top: 105%;
+  right: 9rem;
+  max-height: 0px;
+  overflow: hidden;
+}
+.open-menu{
+  max-height: 200px;
+}
+.card-menu{
+  width: 280px;
+  background:#ffffff;
+  border-radius: 14px;
+  padding: 7px;
+}
+.profile-menu{
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+  border-radius: 8px;
+  padding: 3px 0;
+  margin-bottom: 10px;
+}
+.profile-menu p{
+  margin-left: 0.5rem;
+  margin-top:0.8rem;
+  font-weight: bold;
+}
+.card-menu-items{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 8px;
+ 
+}
+.card-menu-items p{
+  margin-top: 15px;
+  margin-left: 15px;
+  color: black;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
 /* Main Section */
 
 main {
@@ -201,7 +247,7 @@ main .container .left .profile {
   width: 30rem;
   background: white;
   border-radius: 1rem;
-  padding: var(--card-padding);
+  padding: 1rem;
   box-shadow: 0 0 2rem hsl(252, 75%, 60%, 25%);
   z-index: 8;
   display: none;
@@ -532,7 +578,9 @@ main .container .right {
   nav #creatae {
     display: none;
   }
-
+.card-menu-wrap{
+  right: 2rem;
+}
   main .container {
     grid-template-columns: 0 auto 5rem;
     gap: 0;

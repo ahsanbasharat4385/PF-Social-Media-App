@@ -1,3 +1,8 @@
+// Image Drop-Down
+let cardWrap = document.getElementById("cardwrap");
+function openCard(){
+    cardWrap.classList.toggle("open-menu");
+}
 // Sidebar menu
 const menuItems = document.querySelectorAll('.menu-item'); 
 
