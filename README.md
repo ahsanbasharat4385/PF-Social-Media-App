@@ -81,3 +81,8 @@ Use "kminchelle" for "username" and "0lelplR" for "password".
 ## Summary
 
 This project establishes a foundation for building a basic social media application. It demonstrates core concepts of user interaction, data fetching, and frontend development while acknowledging limitations due to the frontend-only approach.
+
+# Contact
+<p> <b>Name: Ahsan Basharat</b></p>
+<p><b>Contact No.: +923014385464</b></p>
+<p><b>Gmail: ahsanbasharat4385@gmail.com</b></p>
