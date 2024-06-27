@@ -1,5 +1,5 @@
 # Programmer Force Social Media App :: A basic Guide
-<b>Github Live Link:</b> https://ahsanbasharat4385.github.io/PF-Social-Media-App/
+<b>Github Live Link:</b> https://ahsanbasharat4385.github.io/Social-Media-App/
 ## Introduction
 
 This project builds a basic, functional social media website. Users can log in, view and interact with posts (limited by the frontend-only approach), and browse comments. The application leverages a Mock API (dummyjson.com) to simulate real-world data retrieval.
